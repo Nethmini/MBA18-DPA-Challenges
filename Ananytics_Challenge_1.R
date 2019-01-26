@@ -41,3 +41,23 @@ plot(PSID[,5:6], col=kc$cluster , cex.main = 0.75)
 
 plot(PSID[,6:7], col=kc$cluster , cex.main = 0.75)
 points(kc$centers[, 6:7], col=6:7, pch=8, cex=2)
+
+plot(PSID)
+table(PSID$married)
+hist(table(PSID$married))
+barplot(table(PSID$married),cex.main=0.75)
+pie(table(PSID$married))
+barplot(table(PSID$kids))
+
+par(mfrow=c(1,3))
+boxplot(PSID$hours)
+boxplot(PSID$earnings)
+boxplot(PSID$age)
+
+par(mfrow=c(1,2))
+boxplot(PSID$earnings)
+boxplot(PSID$age)
+
+mri_step=ecdf(PSID$earnings)     
+plot(mri_step,cex.main=0.75)
+
